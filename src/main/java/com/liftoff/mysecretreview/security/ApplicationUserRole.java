@@ -9,9 +9,8 @@ import java.util.stream.Collectors;
 import static com.liftoff.mysecretreview.security.ApplicationUserPermission.*;
 
 public enum ApplicationUserRole {
-    STUDENT(Sets.newHashSet()),
-    ADMIN(Sets.newHashSet(COURSE_READ, COURSE_WRITE, STUDENT_READ, STUDENT_WRITE)),
-    ADMINTRAINEE(Sets.newHashSet(COURSE_READ, STUDENT_READ));
+    REVIEWER(Sets.newHashSet()),
+    ADMIN(Sets.newHashSet(REVIEW_READ, REVIEW_WRITE, REVIEW_DELETE));
 
     private final Set<ApplicationUserPermission> permissions;
 

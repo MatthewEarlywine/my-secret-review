@@ -19,7 +19,7 @@ public class User extends AbstractEntity{
     @Override
     public String  toString() {
         return "User{" +
-                "userId=" + getId() +
+                "userId=" + User.getId() +
                 ", studentName='" + username + '\'' +
                 '}';
     }

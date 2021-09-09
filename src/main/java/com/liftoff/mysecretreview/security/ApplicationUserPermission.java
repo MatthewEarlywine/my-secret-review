@@ -1,10 +1,9 @@
 package com.liftoff.mysecretreview.security;
 
 public enum ApplicationUserPermission {
-    STUDENT_READ("student:read"),
-    STUDENT_WRITE("student:write"),
-    COURSE_READ("course:read"),
-    COURSE_WRITE("course:write");
+    REVIEW_READ("review:read"),
+    REVIEW_WRITE("review:write"),
+    REVIEW_DELETE("review:delete");
 
     private final String permission;
 

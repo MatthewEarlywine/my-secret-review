@@ -16,7 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import java.util.concurrent.TimeUnit;
 
 import static com.liftoff.mysecretreview.security.ApplicationUserRole.*;
-import static com.liftoff.mysecretreview.security.ApplicationUserRole.STUDENT;
+import static com.liftoff.mysecretreview.security.ApplicationUserRole.REVIEWER;
 
 @Configuration
 @EnableWebSecurity
@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "index", "/css/*", "/js/*").permitAll()
-                .antMatchers("/api/**").hasRole(STUDENT.name())
+                .antMatchers("/api/**").hasRole(REVIEWER.name())
                 .anyRequest()
                 .authenticated()
                 .and()
