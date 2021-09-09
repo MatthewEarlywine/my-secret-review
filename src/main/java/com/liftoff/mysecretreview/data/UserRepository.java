@@ -1,12 +1,18 @@
 package com.liftoff.mysecretreview.data;
 
 
-import com.liftoff.mysecretreview.models.User;
+import com.liftoff.mysecretreview.auth.ApplicationUser;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
 
-public interface UserRepository extends CrudRepository<User, Integer> {
+@Repository
+@Transactional(readOnly = true)
+public interface UserRepository extends CrudRepository<ApplicationUser, Integer> {
 
-    User findByUsername(String username);
+    Optional<ApplicationUser> findByUsername(String username);
 
 }

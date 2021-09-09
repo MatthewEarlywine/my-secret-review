@@ -1,18 +1,24 @@
 package com.liftoff.mysecretreview.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Objects;
 
 @MappedSuperclass
 public abstract class AbstractEntity {
 
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
     @Id
-    @GeneratedValue
-    private static int id;
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
+    private int id;
 
-    public static int getId() {
+    public int getId() {
         return id;
     }
 
